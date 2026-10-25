@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="th" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Shirt - ผลิตและสกรีนเสื้อบอลคุณภาพสูง ตามสั่ง</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            neon: '#00FF87',
+                            cyan: '#00F0FF',
+                            dark: '#080C14',
+                            card: '#0F172A',
+                            border: '#1E293B',
+                            gold: '#FFB800'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Kanit', 'Inter', 'sans-serif'],
+                        pl: ['Impact', 'Arial Black', 'sans-serif'],
+                        ucl: ['Trebuchet MS', 'sans-serif'],
+                        retro: ['Georgia', 'serif'],
+                        modern: ['Courier New', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Kanit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: #080C14;
+            color: #F8FAFC;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080C14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00FF87;
+        }
+
+        .glow-neon {
+            box-shadow: 0 0 25px rgba(0, 255, 135, 0.25);
+        }
+
+        .glow-cyan {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
+        }
+
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .jersey-pattern-stripes {
+            background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 30px, transparent 30px, transparent 60px);
+        }
+
+        .jersey-pattern-hoops {
+            background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 30px, transparent 30px, transparent 60px);
+        }
+
+        .jersey-pattern-dots {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 2px, transparent 2px);
+            background-size: 16px 16px;
+        }
+
+        /* Font styles for dynamic jersey text */
+        .font-pl { font-family: 'Impact', 'Arial Black', sans-serif; letter-spacing: 2px; }
+        .font-ucl { font-family: 'Trebuchet MS', 'Arial', sans-serif; font-weight: 900; letter-spacing: 1px; }
+        .font-retro { font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; }
+        .font-modern { font-family: 'Courier New', monospace; font-weight: 900; letter-spacing: 3px; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-neon selection:text-black">
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-neon to-brand-cyan flex items-center justify-center text-black font-black text-2xl shadow-lg shadow-brand-neon/20">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-wider text-white">FOOTBALL<span class="text-brand-neon">.SHIRT</span></span>
+                        <p class="text-[10px] text-brand-cyan font-medium tracking-widest uppercase -mt-1">CUSTOM JERSEY & PRINTING</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#hero" class="text-brand-neon hover:text-white transition-colors">หน้าแรก</a>
+                    <a href="#customizer" class="text-gray-300 hover:text-brand-neon transition-colors flex items-center gap-1.5"><i class="fa-solid fa-wand-magic-sparkles text-brand-cyan"></i> ออกแบบสั่งทำ</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-brand-neon transition-colors">ผลงานที่ผ่านมา</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-brand-neon transition-colors">ราคาและแพ็กเกจ</a>
+                    <a href="#fabrics" class="text-gray-300 hover:text-brand-neon transition-colors">เนื้อผ้าและไซส์</a>
+                    <a href="#contact" class="text-gray-300 hover:text-brand-neon transition-colors">ติดต่อเรา</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-3">
+                    <a href="#customizer" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-neon to-emerald-400 text-black font-bold text-sm hover:brightness-110 transition-all shadow-md shadow-brand-neon/20 items-center gap-2">
+                        <i class="fa-solid fa-paintbrush"></i>
+                        <span>เริ่มออกแบบเสื้อ</span>
+                    </a>
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl bg-slate-800 text-gray-300 hover:text-white">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 text-brand-neon font-semibold">หน้าแรก</a>
+            <a href="#customizer" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-white"><i class="fa-solid fa-wand-magic-sparkles text-brand-cyan mr-2"></i>ออกแบบสั่งทำ</a>
+            <a href="#portfolio" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-white">ผลงานที่ผ่านมา</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-white">ราคาและแพ็กเกจ</a>
+            <a href="#fabrics" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-white">เนื้อผ้าและไซส์</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-white">ติดต่อเรา</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative overflow-hidden py-16 lg:py-24 border-b border-slate-800/80">
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-brand-neon/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-0 right-10 w-80 h-80 bg-brand-cyan/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-brand-neon/30 text-brand-neon text-xs font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-certificate text-brand-gold"></i>
+                        <span>โรงงานผลิตเสื้อบอลพิมพ์ลาย Sublimation & สกรีนดิจิทัล</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-none tracking-tight">
+                        สร้างสรรค์ชุดแข่งทีมคุณ <br>
+                        <span class="bg-gradient-to-r from-brand-neon via-brand-cyan to-blue-400 bg-clip-text text-transparent">
+                            โดดเด่น คมชัด คุณภาพระดับมืออาชีพ
+                        </span>
+                    </h1>
+
+                    <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        รับผลิตเสื้อฟุตบอลทีม เสื้อเดินสาย เสื้อบริษัท สกรีนชื่อ เบอร์ โลโก้ ด้วยระบบสับลิเมชั่นพิมพ์ลายเต็มตัว หรือเฟล็กซ์นำเข้า คมชัด ไม่ลอกร่อน พร้อมระบบออกแบบจำลองสดแบบ 3D/2D
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#customizer" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-neon to-emerald-400 text-black font-extrabold text-base hover:shadow-lg hover:shadow-brand-neon/30 transition-all flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-shirt"></i>
+                            <span>ลองลองออกแบบเสื้อจำลอง</span>
+                        </a>
+                        <button onclick="openSizeModal()" class="px-8 py-4 rounded-xl bg-slate-800/90 text-white font-semibold text-base hover:bg-slate-700 border border-slate-700 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-ruler-combined text-brand-cyan"></i>
+                            <span>คำนวณไซส์เสื้อ</span>
+                        </button>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-800/80 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-black text-white">500,000+</p>
+                            <p class="text-xs text-gray-400 font-light">ตัวที่จัดส่งแล้วทั่วประเทศ</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-black text-brand-neon">3-5 วัน</p>
+                            <p class="text-xs text-gray-400 font-light">ผลิตด่วนทันใจ</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-black text-white">100%</p>
+                            <p class="text-xs text-gray-400 font-light">การันตีงานสกรีนไม่ลอก</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-neon to-brand-cyan opacity-30 blur-2xl"></div>
+                        <div class="relative bg-slate-900 border border-slate-800 rounded-3xl p-6 text-center space-y-4">
+                            <div class="relative h-80 rounded-2xl bg-slate-950 flex items-center justify-center overflow-hidden border border-slate-800">
+                                <div class="absolute inset-0 opacity-20 jersey-pattern-stripes bg-brand-neon"></div>
+                                <!-- Mockup Display -->
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <i class="fa-solid fa-shirt text-[160px] text-slate-800 drop-shadow-2xl"></i>
+                                    <div class="absolute top-16 text-center">
+                                        <p class="font-pl text-3xl font-black text-brand-neon drop-shadow-md">FOOTBALL</p>
+                                        <p class="font-pl text-6xl font-black text-white tracking-widest drop-shadow-lg">10</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between px-2">
+                                <div class="text-left">
+                                    <p class="text-sm font-bold text-white">ชุดแข่งพิมพ์ลายแบบสั่งทำ</p>
+                                    <p class="text-xs text-brand-cyan">พิมพ์ลายไม่จำกัดจุด / สีสดคมชัด</p>
+                                </div>
+                                <span class="px-3 py-1 bg-brand-neon/20 border border-brand-neon/40 text-brand-neon text-xs font-bold rounded-lg">เริ่มต้น ฿190</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN INTERACTIVE SHIRT CUSTOMIZER -->
+    <section id="customizer" class="py-16 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-neon font-semibold text-xs tracking-widest uppercase bg-brand-neon/10 px-3 py-1 rounded-full border border-brand-neon/20">Interactive Studio</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">โปรแกรมออกแบบเสื้อบอลจำลองสด</h2>
+                <p class="text-gray-400 text-sm mt-2">ปรับเลือกสีเสื้อ ลวดลาย ฟอนต์ชื่อ-เบอร์ และคำนวณราคาได้ทันทีแบบเรียลไทม์</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Column: Visualizer View (2D Graphic Canvas Render) -->
+                <div class="lg:col-span-6 sticky top-24">
+                    <div class="bg-brand-card border border-slate-800 rounded-3xl p-6 shadow-2xl relative">
+                        
+                        <!-- View Viewport Control -->
+                        <div class="flex items-center justify-between mb-4 pb-4 border-b border-slate-800">
+                            <div class="flex gap-2">
+                                <button id="view-back-btn" onclick="setJerseyView('back')" class="px-4 py-1.5 rounded-xl text-xs font-bold bg-brand-neon text-black transition-all">ด้านหลัง (Name & Number)</button>
+                                <button id="view-front-btn" onclick="setJerseyView('front')" class="px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-800 text-gray-400 hover:text-white transition-all">ด้านหน้า (Sponsor & Logo)</button>
+                            </div>
+                            <span class="text-xs text-brand-cyan font-mono" id="current-view-label">VIEW: BACK</span>
+                        </div>
+
+                        <!-- Graphic Container -->
+                        <div class="relative w-full h-[420px] bg-slate-950 rounded-2xl flex items-center justify-center overflow-hidden border border-slate-800/80 shadow-inner">
+                            
+                            <!-- Pattern Overlay -->
+                            <div id="jersey-pattern-layer" class="absolute inset-0 opacity-20 transition-all pointer-events-none"></div>
+
+                            <!-- Jersey SVG / HTML Component Graphic -->
+                            <div id="jersey-visual-box" class="relative transition-all duration-300 w-72 h-80 flex items-center justify-center">
+                                
+                                <!-- Main Shirt SVG Graphic -->
+                                <svg id="jersey-svg" viewBox="0 0 300 320" class="w-full h-full drop-shadow-2xl">
+                                    <!-- Sleeves -->
+                                    <path id="svg-sleeve-left" d="M 40 70 L 85 50 L 95 100 L 30 130 Z" fill="#101827" stroke="#1E293B" stroke-width="2"/>
+                                    <path id="svg-sleeve-right" d="M 260 70 L 215 50 L 205 100 L 270 130 Z" fill="#101827" stroke="#1E293B" stroke-width="2"/>
+                                    <!-- Sleeve Accents -->
+                                    <path id="svg-sleeve-cuff-left" d="M 30 130 L 40 125 L 47 110 L 32 118 Z" fill="#00FF87"/>
+                                    <path id="svg-sleeve-cuff-right" d="M 270 130 L 260 125 L 253 110 L 268 118 Z" fill="#00FF87"/>
+
+                                    <!-- Main Body -->
+                                    <path id="svg-body" d="M 85 50 L 215 50 L 225 290 L 75 290 Z" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+
+                                    <!-- Collar -->
+                                    <path id="svg-collar" d="M 120 50 C 135 70, 165 70, 180 50 C 165 55, 135 55, 120 50 Z" fill="#00FF87"/>
+                                </svg>
+
+                                <!-- OVERLAY TEXT & LOGO LAYERS -->
+                                <!-- Back View Overlay (Name & Number) -->
+                                <div id="layer-back-view" class="absolute inset-0 flex flex-col items-center justify-start pt-14 pointer-events-none">
+                                    <!-- Curved / Straight Name -->
+                                    <div id="render-name" class="font-pl text-2xl uppercase tracking-wider text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-bold">
+                                        PLAYER NAME
+                                    </div>
+                                    <!-- Number -->
+                                    <div id="render-number" class="font-pl text-7xl font-black text-brand-neon leading-none mt-2 drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
+                                        10
+                                    </div>
+                                </div>
+
+                                <!-- Front View Overlay (Sponsor & Badge) -->
+                                <div id="layer-front-view" class="absolute inset-0 flex flex-col items-center justify-center pt-4 pointer-events-none hidden">
+                                    <!-- Chest Logo / Badge -->
+                                    <div class="absolute top-16 left-20 w-10 h-10 rounded-full bg-slate-800 border-2 border-brand-gold flex items-center justify-center text-brand-gold text-xs font-black shadow-md" id="render-badge">
+                                        FC
+                                    </div>
+
+                                    <!-- Sponsor Text / Logo -->
+                                    <div id="render-sponsor" class="font-bold text-lg tracking-widest text-white uppercase border-2 border-dashed border-white/40 px-4 py-1.5 rounded-lg bg-black/40 backdrop-blur-sm">
+                                        SPONSOR LOGO
+                                    </div>
+                                </div>
+
+                                <!-- Sleeve Badge Placeholder -->
+                                <div id="render-sleeve-badge" class="absolute top-28 left-6 w-6 h-6 rounded-full bg-brand-gold text-black text-[9px] font-black flex items-center justify-center shadow-md hidden">
+                                    <i class="fa-solid fa-trophy"></i>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Live Price Summary Widget -->
+                        <div class="mt-6 bg-slate-900/90 rounded-2xl p-4 border border-slate-800 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-gray-400">ประมาณการราคาต่อตัว (สั่งทำ 10 ตัวขึ้นไป):</p>
+                                <p class="text-2xl font-black text-brand-neon" id="calculated-price-unit">฿230 / ตัว</p>
+                            </div>
+                            <button onclick="scrollToQuote()" class="px-5 py-2.5 rounded-xl bg-brand-cyan text-black font-bold text-xs hover:bg-cyan-300 transition-all">
+                                ดูใบเสนอราคา
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Customization Controls -->
+                <div class="lg:col-span-6 space-y-6">
+                    
+                    <!-- Control Tab 1: Color & Style -->
+                    <div class="bg-brand-card border border-slate-800 rounded-3xl p-6 space-y-5">
+                        <h3 class="text-base font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-3">
+                            <i class="fa-solid fa-palette text-brand-neon"></i>
+                            <span>1. เลือกสีและลวดลายเสื้อ (Color & Pattern)</span>
+                        </h3>
+
+                        <!-- Colors Picker Grid -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-2">สีตัวเสื้อหลัก (Base Color)</label>
+                                <div class="flex flex-wrap gap-2" id="body-color-options">
+                                    <!-- Buttons generated by JS -->
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-2">สีคอเสื้อ / ขอบแขน (Accent Color)</label>
+                                <div class="flex flex-wrap gap-2" id="accent-color-options">
+                                    <!-- Buttons generated by JS -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pattern Selection -->
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-2">ลวดลายเนื้อผ้า (Sublimation Pattern)</label>
+                            <div class="grid grid-cols-4 gap-2 text-center text-xs">
+                                <button onclick="setPattern('none')" class="p-2 rounded-xl border border-slate-800 bg-slate-900 hover:border-brand-neon font-medium text-gray-300 active-pattern" id="pat-none">เรียบ (Solid)</button>
+                                <button onclick="setPattern('stripes')" class="p-2 rounded-xl border border-slate-800 bg-slate-900 hover:border-brand-neon font-medium text-gray-300" id="pat-stripes">ลายทางยาว</button>
+                                <button onclick="setPattern('hoops')" class="p-2 rounded-xl border border-slate-800 bg-slate-900 hover:border-brand-neon font-medium text-gray-300" id="pat-hoops">ลายขวาง</button>
+                                <button onclick="setPattern('dots')" class="p-2 rounded-xl border border-slate-800 bg-slate-900 hover:border-brand-neon font-medium text-gray-300" id="pat-dots">ลายจุดดิจิทัล</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Control Tab 2: Custom Name, Number & Font -->
+                    <div class="bg-brand-card border border-slate-800 rounded-3xl p-6 space-y-5">
+                        <h3 class="text-base font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-3">
+                            <i class="fa-solid fa-font text-brand-cyan"></i>
+                            <span>2. สกรีนชื่อ เบอร์ และรูปแบบฟอนต์ (Name & Number)</span>
+                        </h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">ข้อความชื่อหลังเสื้อ</label>
+                                <input type="text" id="input-name" value="FOOTBALL" oninput="updateJerseyText()" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white font-bold text-sm focus:border-brand-neon focus:outline-none uppercase" placeholder="ใส่ชื่อนักเตะ">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">หมายเลขเสื้อ</label>
+                                <input type="text" id="input-number" value="10" maxlength="3" oninput="updateJerseyText()" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-brand-neon font-black text-sm focus:border-brand-neon focus:outline-none" placeholder="เช่น 10">
+                            </div>
+                        </div>
+
+                        <!-- Font Style Selector -->
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-2">เลือกสไตล์ฟอนต์เบอร์สกรีน (Font Style)</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs">
+                                <button onclick="setFontStyle('font-pl')" class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-brand-cyan text-white font-pl text-sm font-bold active-font" id="font-btn-pl">PREMIER</button>
+                                <button onclick="setFontStyle('font-ucl')" class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-brand-cyan text-white font-ucl text-sm font-bold" id="font-btn-ucl">UCL STAR</button>
+                                <button onclick="setFontStyle('font-retro')" class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-brand-cyan text-white font-retro text-sm font-bold" id="font-btn-retro">RETRO</button>
+                                <button onclick="setFontStyle('font-modern')" class="p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-brand-cyan text-white font-modern text-sm font-bold" id="font-btn-modern">MODERN</button>
+                            </div>
+                        </div>
+
+                        <!-- Front Elements: Sponsor Text & Badge -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-slate-800">
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">ข้อความสปอนเซอร์หน้าอก</label>
+                                <input type="text" id="input-sponsor" value="SPONSOR LOGO" oninput="updateJerseyText()" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white font-semibold text-xs focus:border-brand-cyan focus:outline-none uppercase">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">อักษรย่อโลโก้โลโก้อกซ้าย</label>
+                                <input type="text" id="input-badge" value="FC" maxlength="4" oninput="updateJerseyText()" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-brand-gold font-bold text-xs focus:border-brand-cyan focus:outline-none uppercase">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Control Tab 3: Options & Printing Specs -->
+                    <div class="bg-brand-card border border-slate-800 rounded-3xl p-6 space-y-4">
+                        <h3 class="text-base font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-3">
+                            <i class="fa-solid fa-list-check text-brand-gold"></i>
+                            <span>3. เลือกออปชันเพิ่มเติมและระบบพิมพ์</span>
+                        </h3>
+
+                        <div class="space-y-3 text-xs">
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-slate-700">
+                                <div class="flex items-center gap-2">
+                                    <input type="checkbox" id="opt-sleeve-badge" onchange="calculatePrice()" class="w-4 h-4 rounded text-brand-neon bg-slate-800 border-slate-700 focus:ring-0">
+                                    <span class="text-gray-300 font-medium">ติดอาร์มแขนเสื้อ (Arm Badges League / Tournament)</span>
+                                </div>
+                                <span class="text-brand-neon font-bold">+฿20 / ตัว</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-slate-700">
+                                <div class="flex items-center gap-2">
+                                    <input type="checkbox" id="opt-sublimation" checked onchange="calculatePrice()" class="w-4 h-4 rounded text-brand-neon bg-slate-800 border-slate-700 focus:ring-0">
+                                    <span class="text-gray-300 font-medium">เนื้อผ้าไมโครพิมพ์ลาย Sublimation เต็มตัว (สีไม่ตก)</span>
+                                </div>
+                                <span class="text-brand-neon font-bold">รวมในแพ็กเกจ</span>
+                            </label>
+
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-900 border border-slate-800 cursor-pointer hover:border-slate-700">
+                                <div class="flex items-center gap-2">
+                                    <input type="checkbox" id="opt-flex-gold" onchange="calculatePrice()" class="w-4 h-4 rounded text-brand-neon bg-slate-800 border-slate-700 focus:ring-0">
+                                    <span class="text-gray-300 font-medium">อัปเกรดฟอยล์สกรีนเบอร์สีทอง/เงินเงา (Metallic Flex)</span>
+                                </div>
+                                <span class="text-brand-neon font-bold">+฿30 / ตัว</span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE QUOTATION & BULK ESTIMATOR -->
+    <section id="pricing" class="py-16 bg-slate-900/60 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-cyan font-semibold text-xs tracking-widest uppercase bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">Instant Quotation</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">ประเมินราคาสั่งทำและส่วนลดจำนวน</h2>
+                <p class="text-gray-400 text-sm mt-2">สั่งจำนวนยิ่งเยอะ ยิ่งได้ราคาส่งสุดพิเศษ พร้อมสรุปรายการเพื่อส่งแอดมินทาง Line ได้ทันที</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Bulk Calculator Form -->
+                <div class="lg:col-span-7 bg-brand-card border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+                    <h3 class="text-xl font-extrabold text-white flex items-center justify-between">
+                        <span>คำนวณราคารวมการสั่งผลิต</span>
+                        <span class="text-xs font-normal text-brand-cyan"><i class="fa-solid fa-bolt mr-1"></i>ส่วนลดอัตโนมัติ</span>
+                    </h3>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-2">
+                                <label class="text-gray-300">จำนวนเสื้อที่ต้องการสั่งผลิต:</label>
+                                <span class="text-brand-neon font-black text-lg" id="quantity-display">20 ตัว</span>
+                            </div>
+                            <input type="range" id="quantity-slider" min="1" max="200" value="20" oninput="updateQuantityFromSlider()" class="w-full h-3 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-neon">
+                            <div class="flex justify-between text-[11px] text-gray-500 mt-1">
+                                <span>1 ตัว (ปลีก)</span>
+                                <span>10 ตัว (เริ่มส่วนลด)</span>
+                                <span>30 ตัว (ทีมใหญ่)</span>
+                                <span>100+ ตัว (ราคาส่งโรงงาน)</span>
+                            </div>
+                        </div>
+
+                        <!-- Price Breakdown Matrix -->
+                        <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800/80 space-y-2 text-sm">
+                            <div class="flex justify-between text-gray-400">
+                                <span>ราคาฐานเสื้อ + พิมพ์ลาย:</span>
+                                <span id="summary-base-price">฿230 / ตัว</span>
+                            </div>
+                            <div class="flex justify-between text-gray-400">
+                                <span>ออปชันสกรีนและอาร์มเพิ่มเติม:</span>
+                                <span id="summary-addons-price">฿0 / ตัว</span>
+                            </div>
+                            <div class="flex justify-between text-brand-gold font-semibold">
+                                <span>ส่วนลดตามจำนวน (<span id="discount-percent-label">10%</span>):</span>
+                                <span id="summary-discount-amount">-฿460</span>
+                            </div>
+                            <div class="border-t border-slate-800 pt-3 flex justify-between text-lg font-black text-white">
+                                <span>ราคารวมสุทธิทั้งหมด:</span>
+                                <span class="text-2xl text-brand-neon" id="summary-grand-total">฿4,140</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <button onclick="exportQuote()" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-neon to-emerald-400 text-black font-extrabold text-sm hover:brightness-110 transition-all shadow-lg shadow-brand-neon/20 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-file-invoice-dollar text-base"></i>
+                                <span>ออกใบเสนอราคาจำลอง</span>
+                            </button>
+                            <button onclick="sendToLine()" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm transition-all flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-line text-xl"></i>
+                                <span>ส่งรายละเอียดเข้า Line แอดมิน</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Tier Cards -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand-neon/50 transition-all flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-gray-400 uppercase">ขั้นต่ำสั่งผลิต</span>
+                            <h4 class="text-lg font-bold text-white">1 - 9 ตัว (ขั้นต่ำ)</h4>
+                            <p class="text-xs text-gray-400">เหมาะสำหรับเสื้อใส่เล่น หรือตัวแทนทีม</p>
+                        </div>
+                        <span class="text-xl font-black text-white">฿290<span class="text-xs text-gray-400 font-normal">/ตัว</span></span>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-900 border-2 border-brand-neon relative flex items-center justify-between shadow-lg shadow-brand-neon/10">
+                        <span class="absolute -top-3 right-4 px-3 py-0.5 bg-brand-neon text-black text-[10px] font-black uppercase rounded-full">ยอดนิยมสูงสุด</span>
+                        <div>
+                            <span class="text-xs font-bold text-brand-neon uppercase">ชุดทีมแข่งขัน</span>
+                            <h4 class="text-lg font-bold text-white">10 - 29 ตัว</h4>
+                            <p class="text-xs text-gray-400">ฟรีสกรีนชื่อ เบอร์ โลโก้อกครบชุด</p>
+                        </div>
+                        <span class="text-xl font-black text-brand-neon">฿230<span class="text-xs text-gray-400 font-normal">/ตัว</span></span>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand-cyan/50 transition-all flex items-center justify-between">
+                        <div>
+                            <span class="text-xs font-bold text-brand-cyan uppercase">ทีมเดินสาย / สโมสร</span>
+                            <h4 class="text-lg font-bold text-white">30 ตัวขึ้นไป</h4>
+                            <p class="text-xs text-gray-400">แถมฟรีเสื้อผู้จัดการทีม 1 ตัว + ค่าส่งฟรี</p>
+                        </div>
+                        <span class="text-xl font-black text-brand-cyan">฿190<span class="text-xs text-gray-400 font-normal">/ตัว</span></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SHOWCASE GALLERY -->
+    <section id="portfolio" class="py-16 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-brand-gold font-semibold text-xs tracking-widest uppercase bg-brand-gold/10 px-3 py-1 rounded-full border border-brand-gold/20">Our Gallery</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-2">ผลงานการผลิตที่ผ่านมา</h2>
+                    <p class="text-gray-400 text-sm mt-1">ตัวอย่างเสื้อฟุตบอลพิมพ์ลายและงานสกรีนจริงจากลูกค้าของเรา</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap gap-2" id="portfolio-filters">
+                    <button onclick="filterPortfolio('all')" class="port-filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-brand-neon text-black">ทั้งหมด</button>
+                    <button onclick="filterPortfolio('team')" class="port-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-gray-300 hover:bg-slate-700">เสื้อทีมแข่ง</button>
+                    <button onclick="filterPortfolio('fashion')" class="port-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-gray-300 hover:bg-slate-700">เสื้อสายเดี่ยว/แฟชั่นบอล</button>
+                    <button onclick="filterPortfolio('sublimation')" class="port-filter-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-800 text-gray-300 hover:bg-slate-700">พิมพ์ลายซับลิเมชั่น</button>
+                </div>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="portfolio-grid">
+                <!-- Dynamic Portfolio Cards rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FABRIC GUIDE & INTERACTIVE SIZE CALCULATOR -->
+    <section id="fabrics" class="py-16 bg-slate-900/40 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-neon font-semibold text-xs tracking-widest uppercase bg-brand-neon/10 px-3 py-1 rounded-full border border-brand-neon/20">Fabric & Fitting</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">คู่มือเนื้อผ้าและตารางคำนวณไซส์</h2>
+                <p class="text-gray-400 text-sm mt-2">คัดสรรเนื้อผ้าเกรดกีฬาโดยเฉพาะ สวมใส่สบาย ระบายอากาศดีเยี่ยม ไม่ซับน้ำตา</p>
+            </div>
+
+            <!-- Fabrics Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-brand-card border border-slate-800 rounded-3xl p-6 space-y-3 hover:border-brand-neon/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-neon/10 text-brand-neon flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Micro Polyester (ดาวกระจาย)</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        ผ้านุ่ม เบาสบาย ลายดาวกระจายช่วยระบายอากาศได้เร็ว แห้งไว ไม่ยับง่าย ยอดนิยมสูงสุดสำหรับการทำเสื้อทีมแข่ง
+                    </p>
+                </div>
+
+                <div class="bg-brand-card border border-slate-800 rounded-3xl p-6 space-y-3 hover:border-brand-cyan/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-cyan/10 text-brand-cyan flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Jacquard Performance (ผ้าจาการ์ด)</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        เนื้อผ้าทอลายในตัว เพิ่มมิติความหรูหราสไตล์เสื้อสโมสรยุโรป นุ่มลื่น ระบายเหงื่อได้ดีเยี่ยม ทนทานสูง
+                    </p>
+                </div>
+
+                <div class="bg-brand-card border border-slate-800 rounded-3xl p-6 space-y-3 hover:border-brand-gold/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Dry-Fit Pro (ผ้าเม็ดข้าวสาร)</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        โครงสร้างผ้ารวงผึ้ง ยืดหยุ่น 4 ทิศทาง รองรับการปะทะและการเคลื่อนไหวหนักในสนามแข่งได้อย่างสมบูรณ์แบบ
+                    </p>
+                </div>
+            </div>
+
+            <!-- Interactive Size Calculator Banner -->
+            <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 text-center md:text-left">
+                    <h3 class="text-2xl font-black text-white">ไม่แน่ใจเรื่องไซส์เสื้อ?</h3>
+                    <p class="text-gray-300 text-sm">ใช้ระบบคำนวณไซส์อัตโนมัติจาก น้ำหนัก และ ส่วนสูงของคุณได้ทันที</p>
+                </div>
+                <button onclick="openSizeModal()" class="px-8 py-4 rounded-xl bg-brand-neon text-black font-extrabold text-sm hover:bg-emerald-300 transition-all shadow-lg shadow-brand-neon/20 flex items-center gap-2">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>เปิดเครื่องมือคำนวณไซส์</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & QUICK CONTACT -->
+    <footer id="contact" class="bg-slate-950 border-t border-slate-800 pt-16 pb-12 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-4 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-brand-neon flex items-center justify-center text-black font-black text-xl">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+                        <span class="text-2xl font-black tracking-wider text-white">FOOTBALL<span class="text-brand-neon">.SHIRT</span></span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        โรงงานผู้ผลิตและสกรีนเสื้อฟุตบอลครบวงจร บริการพิมพ์ลาย Sublimation งานเฟล็กซ์นำเข้า โลโก้ทอ/ยาง ครบจบในที่เดียว ได้งานไว ตรงเวลา คุณภาพมาตรฐานสากล
+                    </p>
+                    <div class="flex gap-3 text-lg pt-2">
+                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-brand-neon hover:border-brand-neon transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-brand-neon hover:border-brand-neon transition-all"><i class="fa-brands fa-line"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-brand-neon hover:border-brand-neon transition-all"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="md:col-span-2 space-y-3">
+                    <h4 class="text-white font-bold text-sm">เมนูหลัก</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#hero" class="hover:text-brand-neon transition-colors">หน้าแรก</a></li>
+                        <li><a href="#customizer" class="hover:text-brand-neon transition-colors">ออกแบบเสื้อจำลอง</a></li>
+                        <li><a href="#portfolio" class="hover:text-brand-neon transition-colors">ผลงานที่ผ่านมา</a></li>
+                        <li><a href="#pricing" class="hover:text-brand-neon transition-colors">ราคาและโปรโมชัน</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-white font-bold text-sm">ติดต่อสั่งซื้อ / สอบถาม</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-brand-neon"></i>
+                            <span>089-123-4567 / 02-987-6543</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-brands fa-line text-brand-neon text-sm"></i>
+                            <span>Line ID: @footballshirt (มี @)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-clock text-brand-cyan"></i>
+                            <span>เปิดทำการ: จันทร์ - เสาร์ (08:30 - 18:00 น.)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Line QR Code Banner Quick Connect -->
+                <div class="md:col-span-3 bg-slate-900 border border-slate-800 rounded-2xl p-4 text-center space-y-2">
+                    <p class="text-xs font-bold text-white">สแกน QR Code เพิ่มเพื่อนทาง Line</p>
+                    <div class="w-28 h-28 mx-auto bg-white p-2 rounded-xl flex items-center justify-center shadow-md">
+                        <!-- Simulated QR Code SVG -->
+                        <div class="w-full h-full bg-slate-900 rounded flex items-center justify-center text-brand-neon font-black text-2xl">
+                            <i class="fa-solid fa-qrcode"></i>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-brand-neon font-mono">@footballshirt</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+                <p>© 2026 FOOTBALL SHIRT CO., LTD. ALL RIGHTS RESERVED.</p>
+                <p>ผลิตและสกรีนเสื้อบอลคุณภาพสูง ตามสั่งทุกรูปแบบ</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING QUICK LINE BUTTON -->
+    <a href="javascript:void(0)" onclick="sendToLine()" class="fixed bottom-6 left-6 z-40 bg-emerald-500 hover:bg-emerald-400 text-white font-bold p-3.5 sm:px-5 sm:py-3 rounded-full shadow-2xl flex items-center gap-3 transition-all hover:scale-105 glow-neon">
+        <i class="fa-brands fa-line text-2xl"></i>
+        <span class="hidden sm:inline text-xs font-extrabold tracking-wide">สอบถามทาง Line</span>
+    </a>
+
+    <!-- SIZE CALCULATOR MODAL -->
+    <div id="size-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+            <div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeSizeModal()"></div>
+
+            <div class="inline-block w-full max-w-lg p-6 sm:p-8 my-8 overflow-hidden text-left align-middle transition-all transform bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl relative z-10">
+                
+                <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                    <h3 class="text-xl font-extrabold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-brand-neon"></i>
+                        <span>คำนวณไซส์เสื้อและตารางขนาด</span>
+                    </h3>
+                    <button onclick="closeSizeModal()" class="text-gray-400 hover:text-white p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Calculator Form -->
+                <div class="py-6 space-y-4 border-b border-slate-800">
+                    <p class="text-xs text-gray-400">กรอกน้ำหนักและส่วนสูง เพื่อให้ระบบแนะนำไซส์เสื้อที่เหมาะกับคุณ:</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">ส่วนสูง (ซม.)</label>
+                            <input type="number" id="calc-height" placeholder="เช่น 175" value="170" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:border-brand-neon focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">น้ำหนัก (กก.)</label>
+                            <input type="number" id="calc-weight" placeholder="เช่น 68" value="65" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:border-brand-neon focus:outline-none">
+                        </div>
+                    </div>
+
+                    <button onclick="calculateSuggestedSize()" class="w-full py-3 rounded-xl bg-brand-neon text-black font-bold text-sm hover:bg-emerald-300 transition-all">
+                        คำนวณไซส์ที่แนะนำ
+                    </button>
+
+                    <!-- Calculated Result Badge -->
+                    <div id="size-result-box" class="p-4 rounded-2xl bg-slate-950 border border-brand-neon/40 text-center space-y-1 hidden">
+                        <p class="text-xs text-gray-400">ไซส์เสื้อที่แนะนำสำหรับคุณคือ:</p>
+                        <p class="text-3xl font-black text-brand-neon" id="suggested-size-text">SIZE M</p>
+                        <p class="text-[11px] text-gray-400" id="suggested-size-detail">รอบอกประมาณ 38 นิ้ว / ความยาว 27 นิ้ว</p>
+                    </div>
+                </div>
+
+                <!-- Size Chart Table -->
+                <div class="pt-4">
+                    <h4 class="text-xs font-bold text-gray-300 mb-3 uppercase">ตารางขนาดมาตรฐาน (Size Chart)</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-left text-gray-300 border-collapse">
+                            <thead>
+                                <tr class="bg-slate-950 text-brand-cyan border-b border-slate-800">
+                                    <th class="p-2">ไซส์</th>
+                                    <th class="p-2">รอบอก (นิ้ว)</th>
+                                    <th class="p-2">ความยาว (นิ้ว)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800/60">
+                                <tr><td class="p-2 font-bold text-white">S</td><td class="p-2">36"</td><td class="p-2">26"</td></tr>
+                                <tr><td class="p-2 font-bold text-white">M</td><td class="p-2">38"</td><td class="p-2">27"</td></tr>
+                                <tr><td class="p-2 font-bold text-white">L</td><td class="p-2">40"</td><td class="p-2">28"</td></tr>
+                                <tr><td class="p-2 font-bold text-white">XL</td><td class="p-2">42"</td><td class="p-2">29"</td></tr>
+                                <tr><td class="p-2 font-bold text-white">2XL</td><td class="p-2">44"</td><td class="p-2">30"</td></tr>
+                                <tr><td class="p-2 font-bold text-white">3XL</td><td class="p-2">46"</td><td class="p-2">31"</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- EXPORT QUOTATION SUMMARY MODAL -->
+    <div id="quote-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+            <div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onclick="closeQuoteModal()"></div>
+
+            <div class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl relative z-10">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                    <h3 class="text-lg font-bold text-white">ใบเสนอราคาจำลอง (Quotation Summary)</h3>
+                    <button onclick="closeQuoteModal()" class="text-gray-400 hover:text-white p-1">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <div class="py-4 space-y-3 text-xs text-gray-300" id="quote-modal-body">
+                    <!-- Dynamic Summary Text -->
+                </div>
+
+                <div class="pt-4 border-t border-slate-800 flex gap-2">
+                    <button onclick="copyQuoteText()" class="flex-1 py-3 rounded-xl bg-slate-800 text-white font-bold hover:bg-slate-700 transition-all">
+                        <i class="fa-solid fa-copy mr-1"></i> คัดลอกข้อความ
+                    </button>
+                    <button onclick="sendToLine()" class="flex-1 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-500 transition-all">
+                        <i class="fa-brands fa-line mr-1"></i> ส่งเข้า Line
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- APPLICATION LOGIC SCRIPT -->
+    <script>
+        // Color Palette Data
+        const colorPalette = [
+            { name: 'Dark Slate', hex: '#0F172A' },
+            { name: 'Emerald Green', hex: '#00FF87' },
+            { name: 'Cyan Blue', hex: '#00F0FF' },
+            { name: 'Crimson Red', hex: '#EF4444' },
+            { name: 'Gold Yellow', hex: '#FFB800' },
+            { name: 'Pure White', hex: '#FFFFFF' },
+            { name: 'Royal Blue', hex: '#2563EB' }
+        ];
+
+        // Portfolio Items Data
+        const portfolioData = [
+            { id: 1, title: 'ชุดแข่งสโมสร VIP FC', category: 'team', image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80', tag: 'พิมพ์ลายสับลิเมชั่น' },
+            { id: 2, title: 'เสื้อทีมเดินสาย สิงห์บางนา', category: 'team', image: 'https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=600&q=80', tag: 'เฟล็กซ์เบอร์ทอง' },
+            { id: 3, title: 'เสื้อบอลแฟชั่นสายเดี่ยว Lady Kit', category: 'fashion', image: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=600&q=80', tag: 'ทรงเข้ารูปผู้หญิง' },
+            { id: 4, title: 'เสื้อบอลลายมังกร พิมพ์ลายเต็มตัว', category: 'sublimation', image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=600&q=80', tag: 'Micro Poly 100%' }
+        ];
+
+        // State Management
+        let customizerState = {
+            view: 'back', // 'back' | 'front'
+            bodyColor: '#0F172A',
+            accentColor: '#00FF87',
+            pattern: 'none',
+            name: 'FOOTBALL',
+            number: '10',
+            fontClass: 'font-pl',
+            sponsor: 'SPONSOR LOGO',
+            badge: 'FC',
+            quantity: 20,
+            hasSleeveBadge: false,
+            hasMetallicFlex: false
+        };
+
+        // Initialize App
+        window.addEventListener('DOMContentLoaded', () => {
+            renderColorPickers();
+            renderPortfolio('all');
+            updateJerseyVisuals();
+            calculatePrice();
+        });
+
+        // Render Color Pickers
+        function renderColorPickers() {
+            const bodyContainer = document.getElementById('body-color-options');
+            const accentContainer = document.getElementById('accent-color-options');
+
+            bodyContainer.innerHTML = '';
+            accentContainer.innerHTML = '';
+
+            colorPalette.forEach(c => {
+                // Body Color Buttons
+                const bBtn = document.createElement('button');
+                bBtn.className = `w-7 h-7 rounded-full border-2 transition-all ${customizerState.bodyColor === c.hex ? 'border-brand-neon scale-110' : 'border-slate-700 hover:scale-105'}`;
+                bBtn.style.backgroundColor = c.hex;
+                bBtn.onclick = () => {
+                    customizerState.bodyColor = c.hex;
+                    renderColorPickers();
+                    updateJerseyVisuals();
+                };
+                bodyContainer.appendChild(bBtn);
+
+                // Accent Color Buttons
+                const aBtn = document.createElement('button');
+                aBtn.className = `w-7 h-7 rounded-full border-2 transition-all ${customizerState.accentColor === c.hex ? 'border-brand-cyan scale-110' : 'border-slate-700 hover:scale-105'}`;
+                aBtn.style.backgroundColor = c.hex;
+                aBtn.onclick = () => {
+                    customizerState.accentColor = c.hex;
+                    renderColorPickers();
+                    updateJerseyVisuals();
+                };
+                accentContainer.appendChild(aBtn);
+            });
+        }
+
+        // Toggle Front/Back View
+        function setJerseyView(view) {
+            customizerState.view = view;
+            const backBtn = document.getElementById('view-back-btn');
+            const frontBtn = document.getElementById('view-front-btn');
+            const viewLabel = document.getElementById('current-view-label');
+
+            const backLayer = document.getElementById('layer-back-view');
+            const frontLayer = document.getElementById('layer-front-view');
+
+            if (view === 'back') {
+                backBtn.className = "px-4 py-1.5 rounded-xl text-xs font-bold bg-brand-neon text-black transition-all";
+                frontBtn.className = "px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-800 text-gray-400 hover:text-white transition-all";
+                viewLabel.textContent = "VIEW: BACK";
+
+                backLayer.classList.remove('hidden');
+                frontLayer.classList.add('hidden');
+            } else {
+                frontBtn.className = "px-4 py-1.5 rounded-xl text-xs font-bold bg-brand-cyan text-black transition-all";
+                backBtn.className = "px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-800 text-gray-400 hover:text-white transition-all";
+                viewLabel.textContent = "VIEW: FRONT";
+
+                frontLayer.classList.remove('hidden');
+                backLayer.classList.add('hidden');
+            }
+        }
+
+        // Update Jersey Visual Graphics
+        function updateJerseyVisuals() {
+            // Colors Update
+            document.getElementById('svg-body').setAttribute('fill', customizerState.bodyColor);
+            document.getElementById('svg-sleeve-left').setAttribute('fill', customizerState.bodyColor);
+            document.getElementById('svg-sleeve-right').setAttribute('fill', customizerState.bodyColor);
+
+            document.getElementById('svg-collar').setAttribute('fill', customizerState.accentColor);
+            document.getElementById('svg-sleeve-cuff-left').setAttribute('fill', customizerState.accentColor);
+            document.getElementById('svg-sleeve-cuff-right').setAttribute('fill', customizerState.accentColor);
+
+            // Text Updates
+            const nameEl = document.getElementById('render-name');
+            const numEl = document.getElementById('render-number');
+            const sponsorEl = document.getElementById('render-sponsor');
+            const badgeEl = document.getElementById('render-badge');
+
+            nameEl.textContent = customizerState.name || 'PLAYER';
+            numEl.textContent = customizerState.number || '00';
+            sponsorEl.textContent = customizerState.sponsor || 'SPONSOR';
+            badgeEl.textContent = customizerState.badge || 'FC';
+
+            // Font Style Update
+            nameEl.className = `${customizerState.fontClass} text-2xl uppercase tracking-wider text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] font-bold`;
+            numEl.className = `${customizerState.fontClass} text-7xl font-black text-brand-neon leading-none mt-2 drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]`;
+
+            // Sleeve Badge
+            const sleeveBadge = document.getElementById('render-sleeve-badge');
+            if (customizerState.hasSleeveBadge) {
+                sleeveBadge.classList.remove('hidden');
+            } else {
+                sleeveBadge.classList.add('hidden');
+            }
+        }
+
+        // Live Inputs Update
+        function updateJerseyText() {
+            customizerState.name = document.getElementById('input-name').value;
+            customizerState.number = document.getElementById('input-number').value;
+            customizerState.sponsor = document.getElementById('input-sponsor').value;
+            customizerState.badge = document.getElementById('input-badge').value;
+
+            updateJerseyVisuals();
+            calculatePrice();
+        }
+
+        // Set Sublimation Pattern
+        function setPattern(pat) {
+            customizerState.pattern = pat;
+            const layer = document.getElementById('jersey-pattern-layer');
+            
+            // Remove previous patterns
+            layer.className = "absolute inset-0 opacity-20 transition-all pointer-events-none";
+
+            if (pat === 'stripes') layer.classList.add('jersey-pattern-stripes', 'bg-white');
+            if (pat === 'hoops') layer.classList.add('jersey-pattern-hoops', 'bg-white');
+            if (pat === 'dots') layer.classList.add('jersey-pattern-dots');
+
+            // Button Highlight State
+            ['none', 'stripes', 'hoops', 'dots'].forEach(p => {
+                const btn = document.getElementById(`pat-${p}`);
+                if (p === pat) {
+                    btn.classList.add('border-brand-neon', 'text-brand-neon');
+                } else {
+                    btn.classList.remove('border-brand-neon', 'text-brand-neon');
+                }
+            });
+        }
+
+        // Set Font Style
+        function setFontStyle(fontClass) {
+            customizerState.fontClass = fontClass;
+            updateJerseyVisuals();
+
+            ['pl', 'ucl', 'retro', 'modern'].forEach(f => {
+                const btn = document.getElementById(`font-btn-${f}`);
+                if (`font-${f}` === fontClass) {
+                    btn.classList.add('border-brand-cyan', 'text-brand-cyan');
+                } else {
+                    btn.classList.remove('border-brand-cyan', 'text-brand-cyan');
+                }
+            });
+        }
+
+        // Calculate Price and Discount Matrix
+        function calculatePrice() {
+            const qty = customizerState.quantity;
+            customizerState.hasSleeveBadge = document.getElementById('opt-sleeve-badge').checked;
+            customizerState.hasMetallicFlex = document.getElementById('opt-flex-gold').checked;
+
+            // Base Tier Calculation
+            let unitBasePrice = 290;
+            let discountPercent = 0;
+
+            if (qty >= 10 && qty < 30) {
+                unitBasePrice = 230;
+                discountPercent = 10;
+            } else if (qty >= 30) {
+                unitBasePrice = 190;
+                discountPercent = 20;
+            }
+
+            // Addons
+            let addonsPerUnit = 0;
+            if (customizerState.hasSleeveBadge) addonsPerUnit += 20;
+            if (customizerState.hasMetallicFlex) addonsPerUnit += 30;
+
+            const finalUnitPrice = unitBasePrice + addonsPerUnit;
+            const subtotal = finalUnitPrice * qty;
+            const discountAmount = Math.round(subtotal * (discountPercent / 100));
+            const grandTotal = subtotal - discountAmount;
+
+            // Update UI
+            document.getElementById('calculated-price-unit').textContent = `฿${finalUnitPrice} / ตัว`;
+            document.getElementById('quantity-display').textContent = `${qty} ตัว`;
+            document.getElementById('summary-base-price').textContent = `฿${unitBasePrice} / ตัว`;
+            document.getElementById('summary-addons-price').textContent = `฿${addonsPerUnit} / ตัว`;
+            document.getElementById('discount-percent-label').textContent = `${discountPercent}%`;
+            document.getElementById('summary-discount-amount').textContent = `-฿${discountAmount.toLocaleString()}`;
+            document.getElementById('summary-grand-total').textContent = `฿${grandTotal.toLocaleString()}`;
+
+            updateJerseyVisuals();
+        }
+
+        // Quantity Slider Handler
+        function updateQuantityFromSlider() {
+            const slider = document.getElementById('quantity-slider');
+            customizerState.quantity = parseInt(slider.value);
+            calculatePrice();
+        }
+
+        // Render Portfolio
+        function renderPortfolio(category) {
+            const grid = document.getElementById('portfolio-grid');
+            grid.innerHTML = '';
+
+            const items = category === 'all' ? portfolioData : portfolioData.filter(i => i.category === category);
+
+            items.forEach(item => {
+                grid.innerHTML += `
+                    <div class="bg-brand-card border border-slate-800 rounded-2xl overflow-hidden group hover:border-brand-neon/50 transition-all">
+                        <div class="h-52 overflow-hidden relative">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-brand-neon text-[10px] font-bold px-2.5 py-1 rounded-lg border border-slate-700 z-10">
+                                ${item.tag}
+                            </span>
+                            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-white text-sm">${item.title}</h4>
+                            <p class="text-xs text-gray-400 mt-1">งานสกรีนคมชัด สีไม่ลอกร่อน</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Filter Portfolio Category
+        function filterPortfolio(category) {
+            const buttons = document.querySelectorAll('.port-filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-neon', 'text-black');
+                btn.classList.add('bg-slate-800', 'text-gray-300');
+            });
+            event?.currentTarget?.classList.add('bg-brand-neon', 'text-black');
+            event?.currentTarget?.classList.remove('bg-slate-800', 'text-gray-300');
+
+            renderPortfolio(category);
+        }
+
+        // Size Calculator Logic
+        function openSizeModal() {
+            document.getElementById('size-modal').classList.remove('hidden');
+        }
+
+        function closeSizeModal() {
+            document.getElementById('size-modal').classList.add('hidden');
+        }
+
+        function calculateSuggestedSize() {
+            const height = parseFloat(document.getElementById('calc-height').value) || 170;
+            const weight = parseFloat(document.getElementById('calc-weight').value) || 65;
+
+            let size = 'M';
+            let chest = '38 นิ้ว';
+
+            if (weight < 55) { size = 'S'; chest = '36 นิ้ว'; }
+            else if (weight >= 55 && weight < 68) { size = 'M'; chest = '38 นิ้ว'; }
+            else if (weight >= 68 && weight < 78) { size = 'L'; chest = '40 นิ้ว'; }
+            else if (weight >= 78 && weight < 88) { size = 'XL'; chest = '42 นิ้ว'; }
+            else { size = '2XL'; chest = '44 นิ้ว'; }
+
+            document.getElementById('suggested-size-text').textContent = `SIZE ${size}`;
+            document.getElementById('suggested-size-detail').textContent = `รอบอกประมาณ ${chest} / ความยาวเหมาะสมตามสัดส่วน`;
+            document.getElementById('size-result-box').classList.remove('hidden');
+        }
+
+        // Quote & Line Handlers
+        function exportQuote() {
+            const body = document.getElementById('quote-modal-body');
+            const total = document.getElementById('summary-grand-total').textContent;
+
+            body.innerHTML = `
+                <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
+                    <p class="text-brand-neon font-bold">FOOTBALL SHIRT - ใบสรุปการสั่งทำจำลอง</p>
+                    <p><b>จำนวนสั่งผลิต:</b> ${customizerState.quantity} ตัว</p>
+                    <p><b>ชื่อ/เบอร์หลังเสื้อ:</b> ${customizerState.name} (#${customizerState.number})</p>
+                    <p><b>สปอนเซอร์หน้าอก:</b> ${customizerState.sponsor}</p>
+                    <p><b>โลโก้อกซ้าย:</b> ${customizerState.badge}</p>
+                    <p><b>ออปชันเสริม:</b> ${customizerState.hasSleeveBadge ? 'ติดอาร์มแขน' : 'ไม่มีอาร์มแขน'}</p>
+                    <hr class="border-slate-800 my-2">
+                    <p class="text-base font-black text-white">ราคารวมประเมิน: <span class="text-brand-neon">${total}</span></p>
+                </div>
+            `;
+
+            document.getElementById('quote-modal').classList.remove('hidden');
+        }
+
+        function closeQuoteModal() {
+            document.getElementById('quote-modal').classList.add('hidden');
+        }
+
+        function copyQuoteText() {
+            const total = document.getElementById('summary-grand-total').textContent;
+            const text = `[ใบเสนอราคา Football Shirt]\nจำนวน: ${customizerState.quantity} ตัว\nตัวอย่างสกรีน: ${customizerState.name} #${customizerState.number}\nราคารวมประเมิน: ${total}`;
+            
+            navigator.clipboard.writeText(text);
+            showToast("คัดลอกรายละเอียดใบเสนอราคาแล้ว!");
+            closeQuoteModal();
+        }
+
+        function sendToLine() {
+            showToast("กำลังเชื่อมต่อไปยัง Line แอดมิน...");
+            setTimeout(() => {
+                window.open("https://line.me", "_blank");
+            }, 800);
+        }
+
+        function scrollToQuote() {
+            document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Toast Notification System
+        function showToast(msg) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = "px-4 py-3 rounded-2xl bg-slate-900 border border-brand-neon text-white text-xs font-bold shadow-xl flex items-center gap-2 transition-all translate-y-2 opacity-0";
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-brand-neon"></i><span>${msg}</span>`;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
